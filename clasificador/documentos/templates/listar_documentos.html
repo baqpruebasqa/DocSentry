@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Documentos Clasificados{% endblock %}
+
+{% block content %}
+<h2>Documentos Clasificados</h2>
+<table class="table table-striped table-bordered mt-3">
+   <thead class="table-dark">
+       <tr>
+           <th>Archivo</th>
+           <th>Clasificación</th>
+           <th>Puntaje</th>
+           <th>Cargado En</th>
+       </tr>
+   </thead>
+   <tbody>
+       {% for documento in documentos %}
+       <tr>
+           <td>{{ documento.archivo.name }}</td>
+           <td>{{ documento.clasificacion }}</td>
+           <td>{{ documento.puntaje }}</td>
+           <td>{{ documento.cargado_en }}</td>
+       </tr>
+       {% endfor %}
+   </tbody>
+</table>
+<a href="{% url 'cargar_archivo' %}" class="btn btn-primary mt-3">Subir Nuevo Archivo</a>
+{% endblock %}

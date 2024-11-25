@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subir Directorio</title>
+</head>
+<body>
+    <h1>Subir Directorio (ZIP)</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subir</button>
+    </form>
+    <a href="{% url 'listar_documentos' %}">Ver Documentos Clasificados</a>
+</body>
+</html>
